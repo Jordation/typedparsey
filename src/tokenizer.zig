@@ -84,11 +84,11 @@ fn readWord(p: Tokenizer) Tokenizer {
 
     while (i < p.buf.len) : (i += 1) {
         switch (p.buf[i]) {
-            'A'...'Z', 'a'...'z' => {
-                continue;
+            ' ', '\n' => {
+                break;
             },
             else => {
-                break;
+                continue;
             },
         }
     }

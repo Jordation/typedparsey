@@ -20,19 +20,19 @@ pub fn main() !void {
         while (tokenizer.token) |tok| : (tokenizer = tokenizer.next()) {
             switch (tok) {
                 .Word => {
-                    print("{s}\n", .{tok.Word});
+                    print("word token: '{s}'\n", .{tok.Word});
                 },
                 .Integer => {
-                    print("{d}\n", .{tok.Integer});
+                    print("integer token: '{d}'\n", .{tok.Integer});
                 },
                 .Float => {
-                    print("{d}\n", .{tok.Float});
+                    print("float token: '{d}'\n", .{tok.Float});
                 },
                 .Positional => {
-                    print("{d}:{s}\n", .{ tok.Positional.Position, tok.Positional.Suffix });
+                    print("positional token: '{d}:{s}'\n", .{ tok.Positional.Position, tok.Positional.Suffix });
                 },
                 else => {
-                    print("{}\n", .{tok});
+                    print("unknown token: '{any}'\n", .{tok});
                 },
             }
         }
