@@ -27,7 +27,7 @@ fn advance(t: Tokenizer) Tokenizer {
     }
 
     switch (t.buf[t.index]) {
-        'A'...'Z', 'a'...'z' => {
+        'A'...'Z', 'a'...'z', '\'' => {
             return readWord(t);
         },
         '0'...'9' => {
